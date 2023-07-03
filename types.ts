@@ -17,6 +17,7 @@ export interface ProjectInterface {
     githubUrl: string;
     category: string;
     id: string;
+    linkedInUrl?: string;
     createdBy: {
       name: string;
       email: string;
@@ -60,4 +61,19 @@ export interface ProjectForm {
   liveSiteUrl: string;
   githubUrl: string;
   category: string;
+}
+
+
+export type ProjectSearch = {
+  projectSearch: {
+    edges: {
+      node: ProjectInterface
+    }[];
+    pageInfo: {
+      hasPreviousPage: boolean;
+      hasNextPage: boolean;
+      startCursor: string;
+      endCursor: string;
+    }
+  }
 }
